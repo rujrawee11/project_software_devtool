@@ -3,8 +3,8 @@ pipeline {
         environment {
             DOCKER_CONTAINER_NAME_FRONTEND = "frontend_server"
             DOCKER_CONTAINER_NAME_BACKEND = "backend_server"
-            DOCKER_IMAGE_NAME_FRONTEND     = "kedmanee/my-frontend_image:1.0"
-            DOCKER_IMAGE_NAME_BACKEND     = "kedmanee/my-backend_image:1.0"
+            DOCKER_IMAGE_NAME_FRONTEND     = "rujrawee11/my-frontend_image:lastest"
+            DOCKER_IMAGE_NAME_BACKEND     = "rujrawee11/my-backend_image:lastest"
         }
 
 
@@ -23,7 +23,7 @@ pipeline {
 
             stage('Pull Stage') {
                 steps {
-                    dir('wk9') {
+                    dir('project_software_devtool') {
                         echo "Current path is ${pwd()}"
                         sh "docker pull ${DOCKER_IMAGE_NAME_BACKEND}"
                         sh "docker pull ${DOCKER_IMAGE_NAME_FRONTEND}"
@@ -33,10 +33,10 @@ pipeline {
 
             stage('Run Stage') {
                 steps {
-                    dir('wk9') {
+                    dir('project_software_devtool') {
                         echo "Current path is ${pwd()}"
-                        sh "docker run -d -p 8888:80 --name ${DOCKER_CONTAINER_NAME_BACKEND}  ${DOCKER_IMAGE_NAME_BACKEND}"
-                        sh "docker run -d -p 8082:80 --name ${DOCKER_CONTAINER_NAME_FRONTEND} ${DOCKER_IMAGE_NAME_FRONTEND}"
+                        sh "docker run -d -p 8080:80 --name ${DOCKER_CONTAINER_NAME_BACKEND}  ${DOCKER_IMAGE_NAME_BACKEND}"
+                        sh "docker run -d -p 3000:80 --name ${DOCKER_CONTAINER_NAME_FRONTEND} ${DOCKER_IMAGE_NAME_FRONTEND}"
                     }
                 }
             }

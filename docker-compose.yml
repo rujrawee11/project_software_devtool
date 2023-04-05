@@ -5,9 +5,9 @@ services:
     build:
       context: ./back
       dockerfile: Dockerfile
-    image: rujrawee11/my-backend_image:1.0
+    image: rujrawee11/my-backend_image:lastest
   frontend:
     build:
       context: ./front
       dockerfile: Dockerfile
-    image: rujrawee11/my-frontend_image:1.0
+    image: rujrawee11/my-frontend_image:lastest
