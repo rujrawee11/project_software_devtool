@@ -1,42 +1,54 @@
 pipeline {
     agent any
-        
-        stages {
-            stage('Initialize Stage') {
-                steps {
-                    echo 'Initial : Delete containers and images'
-                     dir('project_software_devtool') {
-                        echo "Current path is  ${pwd()}"
-                        sh 'docker-compose down --rmi all --volumes || true'
-                     }
-                }
-            }
+    environment {
+        DOCKERHUB_CREDENTIALS=credentials('dockerhub')
+    }
+ 
+    stages {
+        stage('Initialize Stage') {
+            steps {
 
-            stage('Build Stage'){
-                steps {
-                    dir('project_software_devtool') {
-                        echo "Current path is ${pwd()}"
-                        sh "docker-compose build"
-                    }
-                }
-            }
-
-            stage('Push Stage'){
-                steps {
-                    dir('project_software_devtool') {
-                        withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
-                            sh 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
-                        }
-                        sh 'docker push rujrawee11/my-backend_image:1.0'
-                        sh 'docker push rujrawee11/my-frontend_image:1.0'
-                    }
-                }
-            }
-            
-            stage('Trigger to build slave job'){
-                steps {
-                    build job: 'Slave'
+                echo 'Initial : Delete  containers and image'
+                 dir('project_software_devtool') { // change directory to Lab_docker_Jenkins
+                    echo "Current path is ${pwd()}"
+                    sh "docker-compose down --rmi all --volumes || true"
                 }
             }
         }
+        stage('Login Stage') {
+          steps {
+            echo "Login : Logging in . .."
+
+            sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+          }
+        }
+         stage('Build docker') {
+            steps {
+                dir('project_software_devtool') { // change directory to Lab_docker_Jenkins
+                    sh 'docker-compose build'
+                }
+            }
+        }
+        stage('Push Stage') {
+            steps {
+                dir('project_software_devtool') { // change directory to Lab_docker_Jenkins
+                    echo "Push : Current path is ${pwd()}"
+                    sh "docker-compose push"
+                }
+            }
+        }
+        stage('Trigger Slave Dockerhub last up') {
+            steps {
+                dir('project_software_devtool') { // change directory to Lab_docker_Jenkins
+                    echo "Trigger : calling Slave job . . ."
+                    sh 'echo "HELLO ${DOCKERHUB_CREDENTIALS_USR}"'
+                    build job: 'slave', parameters: [string(name: 'DOCKERHUB_CREDENTIALS_USR', value: env.DOCKERHUB_CREDENTIALS_USR), string(name: 'DOCKERHUB_CREDENTIALS_PSW', value: env.DOCKERHUB_CREDENTIALS_PSW)]
+                }
+            }
+        }
+
+
+
+
+    }
 }
