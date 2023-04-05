@@ -1,13 +1,27 @@
-version: '3'
+# version is now using "compose spec"
+# v2 and v3 are now combined!
+# docker-compose v1.27+ required
 
 services:
-  backend:
-    build:
-      context: ./back
-      dockerfile: Dockerfile
-    image: rujrawee11/my-backend_image:lastest
-  frontend:
-    build:
-      context: ./front
-      dockerfile: Dockerfile
-    image: rujrawee11/my-frontend_image:lastest
+  fe:
+    build: ./front
+    image: rujrawee11/fe:lastest
+    ports: 
+      - 3000:80
+    links:
+      - be
+    networks:
+      - front-tier
+    
+
+  be:
+    build: ./back
+    image: rujrawee11/be:lastest
+    ports: 
+      - 8088:80
+    networks:
+      - back-tier
+  
+networks:
+  front-tier:
+  back-tier:
