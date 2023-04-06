@@ -4,24 +4,14 @@
 
 services:
   fe:
-    build: ./front/.
+    build: front/.
     image: rujrawee11/fe:lastest
     ports: 
       - 5000:80
-    links:
-      - be
-    networks:
-      - front-tier
-    
+
 
   be:
-    build: ./express-mongodb-api/.
+    build: express-mongodb-api/.
     image: rujrawee11/be:lastest
     ports: 
       - 8088:80
-    networks:
-      - back-tier
-  
-networks:
-  front-tier:
-  back-tier:
