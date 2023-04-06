@@ -34,9 +34,8 @@ services:
            NAME: myUserAdmin
         depends_on:
         - mongo_db
-  volumes:
-        mongo_db:[]
-
+ volumes:
+     mongodb:
 networks:
   front-tier:
   back-tier:
