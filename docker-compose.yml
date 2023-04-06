@@ -17,7 +17,7 @@ services:
          - 2717:27017
 
   api:
-      build: .
+      build: ./express-mongodb-api
       ports:
           - 8088:80
       environment:
