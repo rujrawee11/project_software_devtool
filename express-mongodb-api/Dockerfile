@@ -1,6 +1,4 @@
 FROM node
-COPY index.js /usr/share
+COPY . /usr/share
 WORKDIR /usr/share/
-EXPOSE 80
 CMD ["node","index.js"]
-
