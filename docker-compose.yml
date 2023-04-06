@@ -7,7 +7,7 @@ services:
     build: ./front
     image: rujrawee11/fe:latest
     ports: 
-      - 5000:80
+      - 3000:80
     links:
       - be
     networks:
@@ -18,7 +18,7 @@ services:
     build: ./express-mongodb-api
     image: rujrawee11/be:latest
     ports: 
-      - 3000:80
+      - 5000:80
     networks:
       - back-tier
   
