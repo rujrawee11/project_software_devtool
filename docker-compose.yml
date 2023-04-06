@@ -13,26 +13,15 @@ services:
     networks:
       - front-tier
     
-  mongo_db:
-        container_name: db_container
-        image: mongo:lastest
-        restart: always
-        ports:
-            - 2717:27017
-        volumes: 
-            - mongo_db:/data/db
- app:
-    build: .
-    volumes:
-      - .:/usr/src/app/
-      - dependencies:/usr/src/app/node_modules
-    working_dir: /usr/src/app
-    depends_on:
-      - mongo_db
-    environment:
-      NODE_ENV: development
-    ports:
+
+  be:
+    build: ./express-mongodb-api
+    image: rujrawee11/be:latest
+    ports: 
       - 5001:80
-    command: npm run dev
-volumes:
-  dependencies:
+    networks:
+      - back-tier
+  
+networks:
+  front-tier:
+  back-tier:
