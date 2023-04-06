@@ -10,6 +10,7 @@ services:
       - 5000:80
 
 
+
   api:
       build: ./express-mongodb-api
       ports:
@@ -19,8 +20,7 @@ services:
         MONGODB_URI: mongodb://myUserAdmin:myUserAdmin@localhost:27017
         DB_NAME: myUserAdmin
         NAME: myUserAdmin
-      depends_on:
-        - mongo_db
+  
 
 
 
