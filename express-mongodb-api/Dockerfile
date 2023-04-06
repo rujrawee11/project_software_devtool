@@ -1,5 +1,4 @@
 FROM node:16
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci
-COPY . .
+COPY . /usr/share
+WORKDIR /usr/share/
+CMD ["node","index.js"]
