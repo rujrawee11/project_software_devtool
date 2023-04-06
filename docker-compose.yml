@@ -16,7 +16,7 @@ services:
       ports:
           - 8088:80
       environment:
-        PORT: 8088
+        PORT: 80
         MONGODB_URI: mongodb://myUserAdmin:myUserAdmin@localhost:27017
         DB_NAME: myUserAdmin
         NAME: myUserAdmin
