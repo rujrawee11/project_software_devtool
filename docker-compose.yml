@@ -15,7 +15,7 @@ services:
     
 
   be:
-    build: ./back
+    build: ./express-mongodb-api
     image: rujrawee11/be:lastest
     ports: 
       - 8088:80
