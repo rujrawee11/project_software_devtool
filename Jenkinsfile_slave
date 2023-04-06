@@ -3,52 +3,34 @@ pipeline {
     environment {
         DOCKERHUB_CREDENTIALS=credentials('dockerhub')
     }
- 
     stages {
-        stage('Initialize Stage') {
+        stage('Trigged') {
             steps {
-
-                echo 'Initial : Delete  containers and image'
-                 dir('project_software_devtool') { // change directory to Lab_docker_Jenkins
-                    echo "Current path is ${pwd()}"
-                    sh "docker-compose down --rmi all --volumes || true"
-                }
+                echo "Hello $DOCKERHUB_CREDENTIALS_USR from Slave2"
             }
         }
         stage('Login Stage') {
           steps {
-            echo "Login : Logging in . .."
-
+            echo "Login : Logging in . . ."
             sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
           }
         }
-         stage('Build docker') {
+        stage('Pull from Docker') {
+          steps {
+               dir('project_software_devtool') { // change directory to Lab_docker_Jenkins
+                    echo "Pull . ."
+                    sh "docker-compose pull"
+                }
+          }
+        }
+        stage('Start stage') {
             steps {
                 dir('project_software_devtool') { // change directory to Lab_docker_Jenkins
-                    sh 'docker-compose build'
+                    echo "Start . ."
+                    sh "docker-compose up -d"
                 }
             }
         }
-        stage('Push Stage') {
-            steps {
-                dir('project_software_devtool') { // change directory to Lab_docker_Jenkins
-                    echo "Push : Current path is ${pwd()}"
-                    sh "docker-compose push"
-                }
-            }
-        }
-        stage('Trigger Slave Dockerhub last up') {
-            steps {
-                dir('project_software_devtool') { // change directory to Lab_docker_Jenkins
-                    echo "Trigger : calling Slave job . . ."
-                    sh 'echo "HELLO ${DOCKERHUB_CREDENTIALS_USR}"'
-                    build job: 'slave', parameters: [string(name: 'DOCKERHUB_CREDENTIALS_USR', value: env.DOCKERHUB_CREDENTIALS_USR), string(name: 'DOCKERHUB_CREDENTIALS_PSW', value: env.DOCKERHUB_CREDENTIALS_PSW)]
-                }
-            }
-        }
-
-
-
-
-    }
+ 
+}
 }
