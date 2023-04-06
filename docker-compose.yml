@@ -13,15 +13,31 @@ services:
     networks:
       - front-tier
     
+  mongo_db:
+        container_name: db_container
+        image: mongo:lastest
+        restart: always
+        ports:
+            - 2717:27017
+        volumes: 
+            - mongo_db:/data/db
+  api:
+        build: ./express-mongodb-api
+        ports:
+          - 5001:80
+        volumes:
+          - .:/usr/src/app
+        environment:
+           PORT: 3000
+           MONGODB_URI: mongodb://myUserAdmin:myUserAdmin@localhost:27017
+           DB_NAME: myUserAdmin
+           NAME: myUserAdmin
+        depends_on:
+        - mongo_db
+  volumes:
+        mongo_db:
 
-  be:
-    build: ./express-mongodb-api
-    image: rujrawee11/be:latest
-    ports: 
-      - 5001:80
-    networks:
-      - back-tier
-  
 networks:
   front-tier:
   back-tier:
+  
