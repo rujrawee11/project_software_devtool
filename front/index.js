@@ -133,15 +133,3 @@ function userEdit() {
         }
     };
 }
-function showtxt() {
-    Swal.fire({
-        title: 'txt',
-        html:
-            '<input id="score" class="swal2-input" type="range" placeholder="ID">'
-
-        //     focusConfirm: false,
-        //     preConfirm: () => {
-        //         userCreate();
-        //     }
-    })
-}
