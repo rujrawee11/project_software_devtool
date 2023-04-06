@@ -10,9 +10,9 @@ services:
       - 5000:80
 
   mongo_db:
-      build: ./
+  
       container_name: db_container
-      image: rujrawee11/mongo:lastest
+      image: mongo:lastest
       restart: always
       ports:
          - 2717:27017
