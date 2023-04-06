@@ -15,14 +15,11 @@ services:
       restart: always
       ports:
          - 2717:27017
-      volumes: 
-         - mongo_db:/data/db
+
   api:
       build: ./
       ports:
           - 8088:80
-      volumes:
-          - .:/usr/src/app
       environment:
         PORT: 80
         MONGODB_URI: mongodb://myUserAdmin:myUserAdmin@localhost:27017
