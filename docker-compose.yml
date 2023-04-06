@@ -11,13 +11,13 @@ services:
 
   mongo_db:
       container_name: db_container
-      image: rujrawee11/mongo:lastest
+      image: mongo:lastest
       restart: always
       ports:
          - 2717:27017
 
   api:
-      build: ./
+      build: .
       ports:
           - 8088:80
       environment:
