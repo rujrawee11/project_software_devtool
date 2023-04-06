@@ -18,7 +18,7 @@ services:
       volumes: 
          - mongo_db:/data/db
   api:
-      build:
+      build: .
       ports:
           - 8088:80
       volumes:
@@ -28,7 +28,7 @@ services:
         MONGODB_URI: mongodb://myUserAdmin:myUserAdmin@localhost:27017
         DB_NAME: myUserAdmin
         NAME: myUserAdmin
-        depends_on:
+      depends_on:
         - mongo_db
   volumes:
       mongo_db: {}
