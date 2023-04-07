@@ -32,7 +32,6 @@ services:
             - mongo_db:/data/db
   api:
         build:
-          context: .
         ports:
           - 4000:80
         volumes:
