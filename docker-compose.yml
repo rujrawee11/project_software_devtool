@@ -27,8 +27,6 @@ services:
       - mongo_express
 
   mongo_db:
-    build: 
-      context: .
     container_name: mongodb
     image: rujrawee11/mongo:latest
     restart: always
@@ -41,8 +39,6 @@ services:
       - ./database-data:/data/db
             
   mongo_express:
-    build: 
-      context: .
     container_name: mongo-express
     image: rujrawee11/mongo-express:latest
     restart: always
