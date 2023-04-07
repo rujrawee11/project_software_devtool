@@ -23,14 +23,14 @@ services:
       - back-tier
   
   mongo:
-    image: mongo
+    image: rujrawee11/mongo:latest
     restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: myUserAdmin
       MONGO_INITDB_ROOT_PASSWORD: myUserAdmin
 
   mongo-express:
-    image: mongo-express
+    image: rujrawee11/mongo-express:latest
     restart: always
     ports:
       - 5000:5000
@@ -38,7 +38,7 @@ services:
       ME_CONFIG_MONGODB_ADMINUSERNAME: myUserAdmin
       ME_CONFIG_MONGODB_ADMINPASSWORD: myUserAdmin
       ME_CONFIG_MONGODB_URL:  mongodb://myUserAdmin:myUserAdmin@localhost:27017
-      
+
 networks:
   front-tier:
   back-tier:
