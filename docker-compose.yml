@@ -7,7 +7,7 @@ services:
     build: ./front
     image: rujrawee11/fe:latest
     ports: 
-      - 8088:80
+      - 8088:8080
     links:
       - be
     networks:
