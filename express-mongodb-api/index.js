@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
+    console.log(`Example app listening at http://44.210.91.38:${port}`)
 })
 const { MongoClient } = require("mongodb");
 const uri = "mongodb://myUserAdmin:myUserAdmin@localhost:27017";
