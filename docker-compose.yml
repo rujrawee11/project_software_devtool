@@ -28,19 +28,19 @@ services:
 
   mongo_db:
     container_name: mongodb
-    image: rujrawee11/mongo:latest
+    image: mongo:latest
     restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: myUserAdmin
       MONGO_INITDB_ROOT_PASSWORD: myUserAdmin
     ports:
       - 27017:27017
-    volumes: 
+    volumes:
       - ./database-data:/data/db
             
   mongo_express:
     container_name: mongo-express
-    image: rujrawee11/mongo-express:latest
+    image: mongo-express:latest
     restart: always
     ports:
       - 8081:8081
