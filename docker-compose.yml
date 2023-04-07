@@ -23,14 +23,18 @@ services:
       - back-tier
   
   mongo:
-    image: ongo:latest
+    build:
+      context: .
+    image: rujrawee11/mongo:latest
     restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: myUserAdmin
       MONGO_INITDB_ROOT_PASSWORD: myUserAdmin
 
   mongo-express:
-    image: mongo-express:latest
+    build:
+      context: .
+    image: rujrawee11/mongo-express:latest
     restart: always
     ports:
       - 5000:5000
