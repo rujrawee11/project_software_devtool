@@ -10,6 +10,8 @@ services:
       - 8088:80
     links:
       - be
+      - mongo_db
+      - mongo_express
     networks:
       - front-tier
     
@@ -21,10 +23,12 @@ services:
       - 3000:3000
     networks:
       - back-tier
-  
+    links:
+      - mongo_dbs
+      - mongo_express
   mongo_db:
     container_name: mongodb
-    image: mongo:latest
+    image: rujrawee11/mongo:latest
     restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: myUserAdmin
@@ -36,7 +40,7 @@ services:
             
   mongo_express:
     container_name: mongo-express
-    image: mongo-express:latest
+    image: rujrawee11/mongo-express:latest
     restart: always
     ports:
       - 8081:8081
