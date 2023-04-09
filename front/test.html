@@ -30,38 +30,14 @@
     <title>CRUD FROM API</title>
   </head>
   <body>
-    <div class="container">
-      <div class="d-flex flex-row mb-3">
-        <div class="col-8">scsc</div>
-        <p class="slider1 col-3 me-5">
-          <input
-            type="range"
-            class="form-range"
-            name="form_slider1"
-            id="form_slider1"
-            value="0"
-            min="0"
-            max="3"
-            oninput="slider_output1.value=form_slider1.value"
-            onchange="slider_output1.value=value"
-          />
-        </p>
-        <output
-          class="col-0 h4 pb-2 mb-4 text-dark border-bottom border-primary border-3"
-          name="slider_output1"
-          id="slider_output1"
-          for="form_slider1"
-          >0</output
-        >
-      </div>
-    </div>
-    <button type="submit" onclick="slide">submit</button>
-    <p id="score">score :</p>
+    <button type="submit" onclick="call()">s</button>
+    <p id="num">rfew</p>
   </body>
   <script>
-    function slide() {
-      var score = document.getElementById("form_slider1").value;
-      document.getElementById("score").innerHTML = score;
+    function call() {
+      const id = Math.floor(Math.random() * 100000000000000);
+      console.log(id);
+      document.getElementById("num").innerHTML = id;
     }
   </script>
 </html>

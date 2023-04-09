@@ -9,11 +9,35 @@ body {
     background-color: #f6f8fa;
 }
 
-td {
-    line-height: 3rem;
+.card{
+    width: 250px;
+        box-shadow: 0 15px 18px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        text-align: center;
 }
 .navColor{
     color: black;
         background-image: linear-gradient(rgba(86, 144, 153, 0.5),
             rgba(164, 218, 210, 0.75) );
+            
+
+}
+.createbtn{
+    background-image: linear-gradient(rgba(86, 144, 153, 0.5),
+                rgba(164, 218, 210, 0.75));
+                scale: 1.5;
+         
+                    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2);
+}
+.createbtn:hover{
+    background-image: linear-gradient(rgba(90, 175, 189, 0.5),
+                rgba(15, 170, 147, 0.75));
+    scale: 1.5;
+}
+.mood{
+    background-image: linear-gradient(rgba(86, 144, 153, 0.5),
+                rgba(164, 218, 210, 0.75));
+}
+.bigger:hover{
+    opacity: 0.7;
+    scale: 1.2;
 }
