@@ -4,7 +4,8 @@
 }
 
 body {
-    
+    font-family: 'Grandstander', cursive;
+        font-family: 'Noto Sans Thai', sans-serif;
     font-size: 1.25rem;
     background-color: #f6f8fa;
 }
