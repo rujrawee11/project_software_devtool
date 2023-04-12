@@ -1,43 +1,114 @@
 .bg-mynav {
-    
+
     background-color: b;
 }
 
 body {
-    
+
     font-size: 1.25rem;
     background-color: #f6f8fa;
 }
 
-.card{
+.card {
     width: 250px;
-        box-shadow: 0 15px 18px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        text-align: center;
+    box-shadow: 0 15px 18px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
 }
-.navColor{
+
+.navColor {
     color: black;
-        background-image: linear-gradient(rgba(86, 144, 153, 0.5),
-            rgba(164, 218, 210, 0.75) );
-            
+    background-image: linear-gradient(rgba(86, 144, 153, 0.5),
+            rgba(164, 218, 210, 0.75));
+
 
 }
-.createbtn{
+
+.createbtn {
     background-image: linear-gradient(rgba(86, 144, 153, 0.5),
-                rgba(164, 218, 210, 0.75));
-                scale: 1.5;
-         
-                    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2);
+            rgba(164, 218, 210, 0.75));
+    scale: 1.5;
+
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2);
 }
-.createbtn:hover{
+
+.createbtn:hover {
     background-image: linear-gradient(rgba(90, 175, 189, 0.5),
-                rgba(15, 170, 147, 0.75));
+            rgba(15, 170, 147, 0.75));
     scale: 1.5;
 }
-.mood{
+
+.mood {
     background-image: linear-gradient(rgba(86, 144, 153, 0.5),
-                rgba(164, 218, 210, 0.75));
+            rgba(164, 218, 210, 0.75));
 }
-.bigger:hover{
+
+.bigger:hover {
     opacity: 0.7;
     scale: 1.2;
+}
+
+.banner {
+    background-color: rgba(246, 216, 9, 0.30);
+    height: 30%;
+}
+
+.form-bg {
+    background-color: rgba(242, 234, 214, 0.75);
+    border: 2px;
+    border-radius: 10px;
+}
+
+.result-bg{
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+
+.result-bg.one{
+    border: 5px solid #8EB7E2;
+}
+
+.result-bg.two{
+    border: 5px solid #66C8C7;
+}
+
+.result-bg.three{
+    border: 5px solid #FCD240;
+}
+
+.result-bg.four{
+    border: 5px solid #F99C71;
+}
+
+.result-bg.five{
+    border: 5px solid #FF6961;
+}
+
+.num-box {
+    box-sizing: border-box;
+    width: 25px;
+    height: 25px;
+    background: #569099;
+    border: 1px solid #569099;
+    border-radius: 3px;
+    color: white;
+}
+
+.button {
+    background: #93C572;
+    border: 2px;
+    border-radius: 50px;
+    color: black;
+}
+
+.result-box {
+    box-sizing: border-box;
+    width: 150px;
+    height: 40px;
+    padding-top: 3px;
+    background: white;
+    border: 3px solid #569099;
+    border-radius: 20px;
+    color: #569099;
+    text-align: center;
+    font-size: 20px;
 }
