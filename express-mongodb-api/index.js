@@ -96,3 +96,28 @@ app.delete('/users/delete/:id', async (req, res) => {
         "message": user
     });
 })
+
+app.get('/chat', async (req, res) => {
+
+    const client = new MongoClient(uri);
+    await client.connect();
+    const users = await client.db('mydb').collection('chat').find({}).toArray();
+    await client.close();
+    res.status(200).send(users);
+})
+
+app.get('/chat/:clientchat', async (req, res) => {
+
+    const clientchat = req.params.clientchat;
+    const client = new MongoClient(uri);
+    await client.connect();
+    const user = await client.db('mydb').collection('chat').findOne({ "clientchat": clientchat });
+    await client.close();
+    res.status(200).send({
+        "status": "ok",
+        "message": "success",
+        "clientchat": clientchat,
+        "doctorchat": clientchat,
+        "user": user
+    });
+})

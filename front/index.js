@@ -177,7 +177,7 @@ function userCreate() {
             Swal.fire({
                 position: 'center',
                 icon: 'success',
-                title: 'Your work has been saved',
+                title: 'Your diary has been saved',
                 showConfirmButton: false,
                 timer: 1500
             })
@@ -213,7 +213,7 @@ function showUserEditBox(id) {
         if (this.readyState == 4 && this.status == 200) {
             const objects = JSON.parse(this.responseText);
             const user = objects['user'];
-            console.log(user);
+            console.log('l' + objects['user']);
             Swal.fire({
                 title: 'Edit User' +
                     '<svg class="bigger mx-3"style="cursor:pointer" onclick="userDelete(' + user['id'] + ')" xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">' +
@@ -284,3 +284,4 @@ function userEdit(x) {
         }
     };
 }
+
