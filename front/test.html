@@ -248,7 +248,7 @@
         <!-- submit -->
         <div class="row mb-4">
           <div class="col d-flex justify-content-center">
-            <button onclick="cal_result()" type="button" class="btn button btn-lg"><i
+            <button onclick="submit()" type="button" class="btn button btn-lg"><i
                 class="pr-2 bi bi-send"></i>ส่งคำตอบ</button>
           </div>
         </div>
@@ -346,15 +346,7 @@
 
   </div>
 
-
-
-
-
-
-  <!-- <button type="submit" onclick="call()">s</button>
-    <p id="num">rfew</p> -->
 </body>
-
 
 <script>
   function call() {
@@ -368,7 +360,6 @@
     var val8 = document.getElementById("range8").value
     var val9 = document.getElementById("range9").value
 
-    // console.log(val1)
     document.getElementById("val1").textContent = val1;
     document.getElementById("val2").textContent = val2;
     document.getElementById("val3").textContent = val3;
@@ -379,6 +370,37 @@
     document.getElementById("val8").textContent = val8;
     document.getElementById("val9").textContent = val9;
   }
+
+  function submit() {
+    
+    let check1 = document.getElementById("result1");
+    if (check1.style.display === "block") {
+      check1.style.display = "none"
+    }
+
+    let check2 = document.getElementById("result2");
+    if (check2.style.display === "block") {
+      check2.style.display = "none"
+    }
+
+    let check3 = document.getElementById("result3");
+    if (check3.style.display === "block") {
+      check3.style.display = "none"
+    }
+
+    let check4 = document.getElementById("result4");
+    if (check4.style.display === "block") {
+      check4.style.display = "none"
+    }
+
+    let check5 = document.getElementById("result5");
+    if (check5.style.display === "block") {
+      check5.style.display = "none"
+    }
+
+    cal_result();
+  }
+
   function cal_result() {
     var val1 = document.getElementById("range1").value
     var val2 = document.getElementById("range2").value
@@ -391,27 +413,32 @@
     var val9 = document.getElementById("range9").value
 
     var result = parseInt(val1) + parseInt(val2) + parseInt(val3) + parseInt(val4) + parseInt(val5) + parseInt(val6) + parseInt(val7) + parseInt(val8) + parseInt(val9)
-    console.log(result)
+    console.log("result : ",result)
     document.getElementById("result").textContent = result;
 
     if (0 <= result && result <= 4) {
       var x = document.getElementById("result1");
       x.style.display = "block";
+      console.log("depression level 1")
     } else if (5 <= result && result <= 8) {
       var x = document.getElementById("result2");
       x.style.display = "block";
+      console.log("depression level 2")
     } else if (9 <= result && result <= 14) {
       var x = document.getElementById("result3");
       x.style.display = "block";
+      console.log("depression level 3")
     } else if (15 <= result && result <= 19) {
       var x = document.getElementById("result4");
       x.style.display = "block";
+      console.log("depression level 4")
     } else if (20 <= result && result <= 27) {
       var x = document.getElementById("result5");
       x.style.display = "block";
+      console.log("depression level 5")
     }
-
   }
+
 </script>
 
 </html>
