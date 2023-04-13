@@ -121,3 +121,21 @@ app.get('/chat/:clientchat', async (req, res) => {
         "user": user
     });
 })
+
+app.post('/chat/create', async (req, res) => {
+    const user = req.body;
+    const client = new MongoClient(uri);
+    await client.connect();
+    await client.db('mydb').collection('chat').insertOne({
+        clientchat: user.clientchat,
+        doctorchat: user.doctorchat
+
+
+    });
+    await client.close();
+    res.status(200).send({
+        "status": "ok",
+        "message": "success",
+        "user": user
+    });
+})
