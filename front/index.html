@@ -1,95 +1,162 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
   <head>
-    
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="index.css" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="index.css" rel="stylesheet" />
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-    <link rel="stylesheet"
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"></script>
+      crossorigin="anonymous"
+    ></script>
     <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
       integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"></script>
+      crossorigin="anonymous"
+    ></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"></script>
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="index.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-      crossorigin="anonymous"></script>
- <style type="text/css">* {cursor: url(https://ani.cursors-4u.net/symbols/sym-9/sym839.ani), url(https://ani.cursors-4u.net/symbols/sym-9/sym839.png), auto !important;}</style><a href="https://www.cursors-4u.com/cursor/2018/02/17/inflating-a-broken-heart.html" target="_blank" title="Inflating A Broken Heart"><img src="https://cur.cursors-4u.net/cursor.png" border="0" alt="Inflating A Broken Heart" style="position:absolute; top: 0px; right: 0px;" /></a>   <title>CRUD FROM API</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Grandstander:wght@500&family=Mali:wght@700&display=swap');
-</style>
-<style>
-    body {
-        font-family: 'Grandstander', cursive;
-
-    }
-    #card-all{
-     font-family: 'Mali', cursive;
-    }
-</style>
+      crossorigin="anonymous"
+    ></script>
+    <style type="text/css">
+      * {
+        cursor: url(https://ani.cursors-4u.net/symbols/sym-9/sym839.ani),
+          url(https://ani.cursors-4u.net/symbols/sym-9/sym839.png), auto !important;
+      }
+    </style>
+    <a
+      href="https://www.cursors-4u.com/cursor/2018/02/17/inflating-a-broken-heart.html"
+      target="_blank"
+      title="Inflating A Broken Heart"
+      ><img
+        src="https://cur.cursors-4u.net/cursor.png"
+        border="0"
+        alt="Inflating A Broken Heart"
+        style="position: absolute; top: 0px; right: 0px"
+    /></a>
+    <title>CRUD FROM API</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Grandstander:wght@500&family=Mali:wght@700&display=swap");
+    </style>
+    <style>
+      body {
+        font-family: "Grandstander", cursive;
+      }
+      #card-all {
+        font-family: "Mali", cursive;
+      }
+    </style>
   </head>
 
-  <body style="background-color: rgb(232, 239, 245);">
-
-    <nav class="navbar navbar-expand-lg navColor text-dark ">
-      <a class="navbar-brand text-dark text-center" href="index.html">EVERYDAY</br>DIARY</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse"
-      data-target="#navbarNavDropdown"
-      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle
-      navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link text-dark " href="index.html">MOOD DIARY</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-dark" href="test.html">DEPRESSION TEST</a>
-        </li>
-   <li class="nav-item">
-          <a class="nav-link text-dark" href="chat.html">CHAT</a>
-        </li>
-
-      </ul>
-    </div>
-  </nav>
-
-  <div class="container">
-    <div class="d-flex bd-highlight mb-3 col-12">
-      <div class="me-auto p-2 bd-highlight mt-5 ">
-        <h2 class="col-12">Moods Diary</h2>
+  <body style="background-color: rgb(232, 239, 245); font-size: 1.4em">
+    <nav class="navbar navbar-expand-lg navColor text-dark">
+      <img
+        class="px-4"
+        style="width: 12%"
+        src="https://cdn.discordapp.com/attachments/1093096354403844186/1095625717817024552/Untitled_design-removebg-preview.png"
+        alt=""
+      />
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle
+      navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link text-dark px-4" href="index.html">MOOD DIARY</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark px-4" href="test.html"
+              >DEPRESSION TEST</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark px-4" href="chat.html">CHAT</a>
+          </li>
+        </ul>
       </div>
-      <div style="margin-left: 60% ;margin-bottom:2%;">
-        <div class="p-3 bd-highlight align-self-end mt-5">
-          <button type="button" class="createbtn fs-5 d-flex btn rounded-circle
-            "
-            onclick="showUserCreateBox()">+</button>
+    </nav>
+
+    <div class="container">
+      <div class="d-flex bd-highlight col-12">
+        <div class="me-auto p-2 bd-highlight">
+          <img
+            style="width: 60%; margin-top: 0; margin-bottom: -5%"
+            src="https://cdn.discordapp.com/attachments/1093096354403844186/1095628334152568862/Dairy-removebg-preview.png"
+            alt=""
+          />
+        </div>
+        <div style="margin-left: 5%; margin-bottom: 2%; margin-top: 7%">
+          <div class="p-3 bd-highlight align-self-end">
+            <button
+              type="button"
+              class="createbtn fs-5 d-flex btn rounded-circle"
+              onclick="showUserCreateBox()"
+            >
+              +
+            </button>
+          </div>
+        </div>
+        <div style="margin-top: 4%">
+          <select
+            style="background-color: rgb(154, 224, 174)"
+            id="month"
+            onchange="loadTable(document.getElementById('month').value)"
+            class="custom-select m-5"
+          >
+            <option value="all" selected>All months</option>
+            <option value="01">January</option>
+            <option value="02">February</option>
+            <option value="03">March</option>
+            <option value="04">April</option>
+            <option value="05">May</option>
+            <option value="06">June</option>
+            <option value="07">July</option>
+            <option value="08">August</option>
+            <option value="09">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+          </select>
+          <script>
+            function m() {
+              console.log(document.getElementById("month").value);
+            }
+          </script>
         </div>
       </div>
+      <div id="headmonth"></div>
+      <div id="card-all" class="d-flex row row-3"></div>
     </div>
-    <div id="card-all" class="d-flex row row-3"></div>
-</div>
-
   </body>
   <script></script>
 </html>

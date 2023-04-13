@@ -1,32 +1,3 @@
-// function chat() {
-//     const xhttp = new XMLHttpRequest();
-//     xhttp.open("GET", "http://localhost:3000/chat");
-//     xhttp.send();
-//     xhttp.onreadystatechange = function () {
-//         if (this.readyState == 4 && this.status == 200) {
-//             console.log(this.responseText);
-//             var chats = '';
-//             var count = 0;
-
-//             const objects = JSON.parse(this.responseText);
-
-
-//             for (let object of objects) {
-//                 chats += '<div>' +
-//                     '<div >' + object['clientchat'] + '</div>' +
-
-//                     '</div>'
-
-
-//             }
-//         }
-//         // document.getElementById("client").innerHTML = chats;
-//         console.log(chats)
-//     }
-// };
-
-
-
 var chats = '';
 function showUserEditBox(clientchat) {
 
@@ -60,12 +31,11 @@ function advice() {
         html:
             '<div class="d-flex row p-3">' +
             '<p>ชื่อ - นามสกุล</p>' +
-            '<input id="name" type="text" class= "form-control mb-3"  placeholder="firstnamr - lastname" >' +
+            '<input id="name" type="text" class= "form-control mb-3"  placeholder="firstname - lastname" >' +
             '<p>เบอร์ติดต่อ</p>' +
             '<input type="text" id="tel" class= "form-control" placeholder="Tel">' +
             '</div>',
-        showConfirmButton: false,
-        timer: 1500,
+        showConfirmButton: true,
 
         focusConfirm: false,
         preConfirm: () => {
@@ -76,10 +46,13 @@ function advice() {
 
 }
 function advicemessage(name, tel) {
-    Swal.fire(
-        'เจ้าหน้าที่จะติดต่อกลับ ภายใน 24 ชั่วโมง',
-        'ชื่อ - นามสกุล :   ' + name + '       เบอร์ติดต่อ :   ' + tel,
+    Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'เจ้าหน้าที่จะติดต่อกลับ ภายใน 24 ชั่วโมง',
 
-        'success'
-    )
+        showConfirmButton: false,
+        timer: 1500
+
+    })
 }

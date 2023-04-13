@@ -80,7 +80,7 @@ app.put('/users/update', async (req, res) => {
     await client.close();
     res.status(200).send({
         "status": "ok",
-        "message": "User with ID = " + user.date + " is updated",
+        "message": "",
         "user": user
     });
 })
