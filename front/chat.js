@@ -25,7 +25,6 @@ function showUserEditBox(clientchat) {
 }
 
 function advice() {
-
     Swal.fire({
         title: 'ยินยอมรับคำปรึกษาจากแพทย์',
         html:
@@ -36,7 +35,6 @@ function advice() {
             '<input type="text" id="tel" class= "form-control" placeholder="Tel">' +
             '</div>',
         showConfirmButton: true,
-
         focusConfirm: false,
         preConfirm: () => {
             advicemessage(document.getElementById('name').value, document.getElementById('tel').value)
