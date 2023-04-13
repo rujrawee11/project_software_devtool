@@ -13,10 +13,10 @@ app.get('/', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
+    console.log(`Example app listening at http://3.88.53.217:${port}`)
 })
 const { MongoClient } = require("mongodb");
-const uri = "mongodb://myUserAdmin:myUserAdmin@localhost:27017";
+const uri = "mongodb://myUserAdmin:myUserAdmin@3.88.53.217:27017";
 
 app.post('/users/create', async (req, res) => {
     const user = req.body;

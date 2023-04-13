@@ -3,7 +3,7 @@ function showUserEditBox(clientchat) {
 
     console.log("cx" + clientchat);
     const xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "http://localhost:3000/chat/" + clientchat);
+    xhttp.open("GET", "http://3.88.53.217:3000/chat/" + clientchat);
 
     xhttp.send();
     xhttp.onreadystatechange = function () {
