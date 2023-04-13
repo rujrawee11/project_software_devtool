@@ -54,3 +54,27 @@ function advicemessage(name, tel) {
 
     })
 }
+
+function userCreate() {
+
+
+    const xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "http://3.88.53.217:3000/users/create");
+    xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    xhttp.send(JSON.stringify({
+        "clientchat": "สวัสดีค่ะ", "doctorchat": "สวัสดีค่ะ คนเก่ง :) วันนี้เป็นยังไงมั่งคะ"
+    }));
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            const objects = JSON.parse(this.responseText);
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Your diary has been saved',
+                showConfirmButton: false,
+                timer: 1500
+            })
+            loadTable();
+        }
+    };
+}
