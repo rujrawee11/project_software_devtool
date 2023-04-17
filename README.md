@@ -1,6 +1,6 @@
-#Everyday mood
+# Everyday mood
 
-#คลิป demo_miniproject
+# คลิป demo_miniproject
 https://youtu.be/m0IwKKX-U0k
 
 # slide นำเสนอการ pitch
